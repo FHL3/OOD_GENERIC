@@ -12,19 +12,13 @@ namespace OOD_Generics
         public string Name { get; set; }    
         public char Rank { get; set; }
         public decimal Coin { get; private set; } //encapsulation
-        public string Profession { get; set; }
 
-        public Character(int id, string name, char rank, decimal coin, string prof)
+        public Character(int id, string name, char rank, decimal coin)
         {
             ID = id;
             Name = name;
             Rank = rank;
             Coin = coin;
-            Profession = prof;
-        }
-        public void CharacterInfo()
-        {
-            Console.WriteLine($"Name: {Name}, Rank: {Rank}, Coins: {Coin}, Profession: {Profession}");
         }
         public bool SpendCoins(decimal amount)
         {
@@ -56,6 +50,15 @@ namespace OOD_Generics
             }
             Console.WriteLine($"Total coins: {Coin}");
             return Coin;
+        }
+        public virtual void Attack() //Abstraction
+        {
+            Console.WriteLine($"{Name} attacks");
+        }
+
+        public void CharacterInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Rank: {Rank}, Coins: {Coin}.");
         }
     }
 }
