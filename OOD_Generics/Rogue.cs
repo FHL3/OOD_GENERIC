@@ -14,6 +14,7 @@ namespace OOD_Generics
         public override void Attack()
         {
             base.Attack();
+            Console.WriteLine("Swiftly throws a kunai");
         }
     }
 }
