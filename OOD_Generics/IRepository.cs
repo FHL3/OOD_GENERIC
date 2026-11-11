@@ -9,9 +9,9 @@ namespace OOD_Generics
 {
     interface IRepository<T>
     {
-        void add(T value);
-        T GetById(int id);
+        IEnumerable<T> GetById(int id);
         Collection<T> GetAll(); //retrieving a collection
+        void Add(T value);
         void Update(T value);
         void Remove(int id);
     }
