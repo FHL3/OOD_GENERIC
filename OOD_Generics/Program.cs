@@ -1,5 +1,6 @@
 ﻿using OOD_Generics;
 
+//Generic List<T>
 List<Character> characters = new()
 {
     new Warrior(1, "Selah", 'F', 100),
