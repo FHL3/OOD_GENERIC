@@ -24,8 +24,10 @@ namespace OOD_Generics
                 {
                     return character;
                 }
-                
+
             }
+
+            Console.WriteLine("test message");
             return null;
         }
         public void Add(Character character)

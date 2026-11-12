@@ -55,6 +55,10 @@ namespace OOD_Generics
         {
             Console.WriteLine($"{Name} attacks");
         }
+        public void Celebrate()
+        {
+            Console.WriteLine($"{Name} celebrates!");
+        }
 
         public void CharacterInfo()
         {
