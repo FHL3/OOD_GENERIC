@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD_Generics
 {
-    class Character
+    public class Character
     {
         public int ID {  get;}
         public string Name { get; set; }    
