@@ -8,31 +8,21 @@ using System.Threading.Tasks;
 
 namespace OOD_Generics
 {
-    public class CharacterRepository : IRepository<Character>
+    public class CharacterRepository : ICharacterRepository
     {
         private List<Character> characters = new();
+        public void Add(Character character)
+        {
+            characters.Add(character);
+        }
         public IEnumerable<Character> GetAll()
         {
-            return characters;
+            return characters.ToList();
         }
 
         public Character GetById(int id)
         {
-           foreach(Character character in characters)
-            {
-                if (character.ID == id)
-                {
-                    return character;
-                }
-
-            }
-
-            Console.WriteLine("test message");
-            return null;
-        }
-        public void Add(Character character)
-        {
-            characters.Add(character);
+            return characters.Where(p => p.ID == id).FirstOrDefault(); //predicate function
         }
         public void Update(Character character)
         {
@@ -44,13 +34,18 @@ namespace OOD_Generics
                 existingCharacter.Rank = character.Rank;
             }
         }
-        public void Remove(int  id)
+        public void Remove(int id)
         {
             Character character1 = GetById(id);
             if (character1 != null) 
             {
                 characters.Remove(character1);
             }
+        }
+
+        public void AddCharacter(Character character)
+        {
+            characters.Add(character);
         }
     }
 }

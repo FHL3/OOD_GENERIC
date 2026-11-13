@@ -1,5 +1,6 @@
 ﻿using OOD_Generics;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 
 
@@ -15,6 +16,10 @@ List<Character> characters = new()
     new Rogue(3, "Shaddai", 'F', 100),
     new Knight(4, "Elyon", 'E', 200)
 };
+Character player1 = new Character(6, "Dave", 'D', 500);
+//player1.Coin = 300;
+//IRepository<Character> characterRepository = new CharacterRepository();
+
 int fighterNumber = 1;
 foreach (Character character in characters)
 {
@@ -45,7 +50,23 @@ selectedFighter2.Attack();
 //Action<Character> action;
 //Action celebrate = () => Console.WriteLine($"{selectedFighter.Name}");
 
-foreach (CharacterRepository character in characters)
+//foreach (CharacterRepository character in characters)
+//{
+//    yield return character;
+//}
+
+Console.WriteLine();
+Console.WriteLine("Demostratiing Repository");
+var characterRepository = new CharacterRepository();
+//characterRepository.Add(new Mage(5, "Joshua", 'C', 300));
+//characterRepository.Add(new Warrior(7, "Josh", 'D', 400));
+characterRepository.AddCharacter(new Character(2, "Seke", 'E', 200));
+characterRepository.GetAll();
+characterRepository.GetById(5);
+characterRepository.Update(selectedFighter2);
+characterRepository.Remove(1);
+
+foreach(Character character in characterRepository.GetAll())
 {
-    yield return character;
+    character.CharacterInfo();
 }

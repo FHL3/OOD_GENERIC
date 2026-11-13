@@ -9,9 +9,8 @@ namespace OOD_Generics
     class Knight : Character
     {
         public Knight(int id, string name, char rank, decimal coin) : base(id, name, rank, coin)
-        {
-        }
-        public override void Attack()
+        { }
+        public override  void Attack()
         {
             Console.WriteLine($"{Name} pounced!");
         }
