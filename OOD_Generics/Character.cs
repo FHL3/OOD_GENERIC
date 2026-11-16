@@ -8,10 +8,10 @@ namespace OOD_Generics
 {
     public class Character
     {
-        public int ID {  get;}
+        public int ID { get;}
         public string Name { get; set; }    
         public char Rank { get; set; }
-        public decimal Coin { get; private set; } //encapsulation
+        private decimal Coin { get; set;} //encapsulation
 
         public Character(int id, string name, char rank, decimal coin)
         {
@@ -54,6 +54,10 @@ namespace OOD_Generics
         public virtual void Attack() //Abstraction
         {
             Console.WriteLine($"{Name} attacks");
+        }
+        public void Celebrate()
+        {
+            Console.WriteLine($"{Name} celebrates!");
         }
 
         public void CharacterInfo()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOD_Generics
 {
-    interface IHealer
+    interface IHealer //interface
     {
         void Heal();
     }

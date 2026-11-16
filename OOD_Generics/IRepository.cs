@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace OOD_Generics
 {
-    interface IRepository<T>
+    public interface IRepository<T>
+        where T : class
     {
         T GetById(int id);
         IEnumerable<T> GetAll(); //retrieving a collection
