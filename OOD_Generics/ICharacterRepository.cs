@@ -8,6 +8,6 @@ namespace OOD_Generics
 {
     public interface ICharacterRepository : IRepository<Character>
     {
-        void AddCharacter(Character character);
+        void AddCharacter(Character character); 
     }
 }
