@@ -1,13 +1,9 @@
 ﻿using OOD_Generics;
 using System.Collections.Generic;
 using System.ComponentModel;
-
-using OOD_Generics;
 using System.Reflection.Metadata.Ecma335;
 
-static void ProcessCharacters(
-    IEnumerable<Character> characters,
-    Action<Character> action)
+static void ProcessCharacters(IEnumerable<Character> characters, Action<Character> action)
 {
     foreach (Character character in characters)
     {
@@ -27,11 +23,50 @@ List<Character> characters = new()
     new Knight(4, "Elyon", 'E', 200)
 };
 
+Console.WriteLine("Transforming character into string");
+var names = characters.Select(x => x.Name);
+foreach(string name in names)
+{
+    Console.WriteLine(name);
+}
+Console.WriteLine();
+Console.WriteLine("Finding Rank F characters in the List");
+var findChar = characters.Where(x => x.Rank == 'F').ToList(); //predicate
+foreach(Character character in findChar)
+{
+    Console.WriteLine(character.Name);
+}
+Console.WriteLine();
+Console.WriteLine("Sorting characters from the List of names");
+var sorted = characters.OrderBy(x => x.Name).ToList();
+
+foreach (Character character in sorted)
+{
+    Console.WriteLine(character.Name);
+}
+
+Console.WriteLine("Use of SelectMany method");
+var charQuery = from character in characters
+                from word in character.Name
+                select word;
+
+foreach(char character in charQuery)
+{
+    Console.WriteLine(character);
+}
+
+Console.WriteLine();
+Console.WriteLine("Group characters by Rank");
+var groupCharacters = characters.GroupBy(r => r.Rank);
+
+foreach (var group in groupCharacters)
+{
+    Console.WriteLine(gp.Name);
+}
+Console.WriteLine();
 Console.WriteLine("===== ALL FIGHTERS =====");
 
-ProcessCharacters(
-    characters,
-    c => c.CharacterInfo()
+ProcessCharacters(characters,c => c.CharacterInfo()
 );
 
 Console.WriteLine();
