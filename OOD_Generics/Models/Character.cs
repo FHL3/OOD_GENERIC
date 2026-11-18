@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOD_Generics
+namespace OOD_Generics.Models
 {
     public class Character
     {
@@ -12,7 +12,9 @@ namespace OOD_Generics
         public string Name { get; set; }    
         public char Rank { get; set; }
         private decimal Coin { get; set;} //encapsulation
-
+        public int GuildId { get; set; }
+        public int WeapId { get; set; }
+        
         public Character(int id, string name, char rank, decimal coin)
         {
             ID = id;
@@ -60,9 +62,6 @@ namespace OOD_Generics
             Console.WriteLine($"{Name} celebrates!");
         }
 
-        public void CharacterInfo()
-        {
-            Console.WriteLine($"Name: {Name}, Rank: {Rank}, Coins: {Coin}.");
-        }
+
     }
 }

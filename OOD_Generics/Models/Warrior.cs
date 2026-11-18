@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOD_Generics
+namespace OOD_Generics.Models
 {
-    class Rogue : Character
+    class Warrior : Character //Inheritance
     {
-        public Rogue(int id, string name, char rank, decimal coin) : base(id, name, rank, coin)
+        public Warrior(int id, string name, char rank, decimal coin) : base(id, name, rank, coin)
         { }
+
         public override void Attack()
         {
             base.Attack();
-            Console.WriteLine("Swiftly throws a kunai");
+            Console.WriteLine("Warrior swings sword");
         }
     }
 }

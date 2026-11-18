@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOD_Generics
+namespace OOD_Generics.Views
 {
-    interface IHealer //interface
+    internal class WeaponView
     {
-        void Heal();
     }
 }

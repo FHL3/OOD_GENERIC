@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOD_Generics
 {
-    public interface ICharacterRepository : IRepository<Character>
+    public class Guild
     {
-        void AddCharacter(Character character); 
+        public int GuId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
