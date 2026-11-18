@@ -45,7 +45,7 @@ namespace OOD_Generics
         {
             if (amount > 0)
             {
-                Console.WriteLine($"You have earned {amount}");
+                Console.WriteLine($"{Name} has earned {amount}");
                 Coin += amount;
             }
             Console.WriteLine($"Total coins: {Coin}");
