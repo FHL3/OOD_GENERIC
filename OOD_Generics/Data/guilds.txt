@@ -1,0 +1,3 @@
+101,The Worshipful Company of Spectacle Makers, A real-world medieval trade guild created to regulate the quality of eyeglasses and optical instruments,
+102,The Cartographers of the Shifting Sands, A secretive guild of desert navigators, astronomers, and mapmakers. Because the magical dunes of their homeland constantly reshape themselves overnight, this guild does not sell static maps.,
+103,The Guild of Saint Luke, The most famous historical guild for painters, sculptors, and visual artists, named after Luke the Evangelist (the patron saint of artists)

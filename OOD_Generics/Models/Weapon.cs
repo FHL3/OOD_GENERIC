@@ -14,5 +14,12 @@ namespace OOD_Generics.Models
         public string Description { get; set; }
         public string WeaponType { get; set; }
 
+        public Weapon(int id, string name, string descr, string type)
+        {
+            WeapId = id;
+            Name = name;
+            Description = descr;
+            WeaponType = type;
+        }
     }
 }

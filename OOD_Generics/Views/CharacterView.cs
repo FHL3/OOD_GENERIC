@@ -11,7 +11,7 @@ namespace OOD_Generics.Views
     {
         public static void DisplayCharacter(Character character)
         {
-            Console.WriteLine($"{character.ID} | {character.Name} | {character.Rank}");
+            Console.WriteLine($"{character.ID} | {character.Name} | {character.Rank} | {character.Health}[---]");
         }
         public static void DisplayCharacters(IEnumerable<Character> characters)
         {

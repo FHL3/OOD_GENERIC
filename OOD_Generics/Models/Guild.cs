@@ -11,5 +11,11 @@ namespace OOD_Generics
         public int GuId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public Guild(int guid, string name, string description)
+        {
+            GuId = guid;
+            Name = name;
+            Description = description;
+        }
     }
 }

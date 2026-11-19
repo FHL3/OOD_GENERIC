@@ -8,11 +8,15 @@ namespace OOD_Generics.Models
 {
     class Knight : Character
     {
-        public Knight(int id, string name, char rank, decimal coin) : base(id, name, rank, coin)
+        public Knight(int id, string name, char rank, decimal coin) : base(id, name, rank, coin, 100)
         { }
-        public override  void Attack()
+        public override void Attack()
         {
             Console.WriteLine($"{Name} pounced!");
+        }
+        public override void Dodge()
+        {
+            Console.WriteLine($"{Name} dodges attack");
         }
     }
 }

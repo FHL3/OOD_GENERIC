@@ -12,15 +12,19 @@ namespace OOD_Generics.Models
         public string Name { get; set; }    
         public char Rank { get; set; }
         private decimal Coin { get; set;} //encapsulation
+        public int Health { get; private set; }
+        public int Damage {  get; protected set; }
         public int GuildId { get; set; }
         public int WeapId { get; set; }
         
-        public Character(int id, string name, char rank, decimal coin)
+        public Character(int id, string name, char rank, decimal coin, int startHealth)
         {
             ID = id;
             Name = name;
             Rank = rank;
             Coin = coin;
+            this.Health = startHealth;
+            this.Damage = 0;
         }
         public bool SpendCoins(decimal amount)
         {
@@ -57,11 +61,28 @@ namespace OOD_Generics.Models
         {
             Console.WriteLine($"{Name} attacks");
         }
+        public virtual void Dodge()
+        {
+            Console.WriteLine($"{Name} dodges attack");
+        }
         public void Celebrate()
         {
             Console.WriteLine($"{Name} celebrates!");
         }
+        public void TakeDamage(int amount)
+        {
+            Health -= amount;
+            Console.WriteLine($"{Name} takes {amount} damage");
 
-
+            if (Health <= 0)
+            {
+                Health = 0;
+                Console.WriteLine($"{Name} has been defeated");
+            }
+        }
+        public bool isAlive()
+        {
+            return Health > 0;
+        }
     }
 }

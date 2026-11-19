@@ -1,0 +1,5 @@
+1,Selah,F,100
+2,Elikai,F,100
+3,Shaddai,F,100
+4,Elyon,E,200
+5,Judah,A,800

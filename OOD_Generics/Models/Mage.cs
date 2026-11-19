@@ -9,12 +9,16 @@ namespace OOD_Generics.Models
 {
     class Mage : Character, IHealer
     {
-        public Mage(int id, string name, char rank, decimal coin) : base(id, name, rank, coin)
+        public Mage(int id, string name, char rank, decimal coin) : base(id, name, rank, coin, 100)
         { }
         public override void Attack()
         {
             base.Attack();
             Console.WriteLine("Casts Fireball");
+        }
+        public override void Dodge()
+        {
+            Console.WriteLine($"{Name} dodges attack");
         }
         public void Heal()
         {
