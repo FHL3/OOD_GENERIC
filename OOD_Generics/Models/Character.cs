@@ -24,7 +24,6 @@ namespace OOD_Generics.Models
             Rank = rank;
             Coin = coin;
             this.Health = startHealth;
-            this.Damage = 0;
         }
         public bool SpendCoins(decimal amount)
         {

@@ -9,7 +9,9 @@ namespace OOD_Generics.Models
     class Warrior : Character //Inheritance
     {
         public Warrior(int id, string name, char rank, decimal coin) : base(id, name, rank, coin, 100)
-        { }
+        {
+            Damage = 27;
+        }
 
         public override void Attack()
         {

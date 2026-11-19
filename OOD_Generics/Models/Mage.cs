@@ -10,7 +10,9 @@ namespace OOD_Generics.Models
     class Mage : Character, IHealer
     {
         public Mage(int id, string name, char rank, decimal coin) : base(id, name, rank, coin, 100)
-        { }
+        {
+            Damage = 15;
+        }
         public override void Attack()
         {
             base.Attack();

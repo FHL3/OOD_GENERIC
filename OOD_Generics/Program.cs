@@ -141,23 +141,32 @@ Character fighter2 = arenaFighters[1];
 
 
 Console.WriteLine(fighter1.Name + " vs. " + fighter2.Name);
-fighter2.Attack();
-fighter1.Dodge();
-fighter1.Attack();
-fighter2.TakeDamage(20);
-fighter2.Attack();
-fighter1.TakeDamage(15);
-fighter2.Attack();
-fighter1.Dodge();
-fighter1.Attack();
-fighter2.TakeDamage(40);
-fighter2.Attack();
-fighter1.TakeDamage(35);
-fighter2.Attack();
-fighter1.TakeDamage(15);
-fighter2.Attack();
-fighter1.Dodge();
-fighter1.Attack();
-fighter2.TakeDamage(40);
-fighter2.isAlive();
+while(fighter1.isAlive() && fighter2.isAlive())
+{
+    fighter1.Attack();
+    fighter2.TakeDamage(fighter1.Damage);
+
+    Console.WriteLine($"{fighter2.Name} HP: {fighter2.Health}");
+
+
+    if (!fighter2.isAlive())
+    {
+        Console.WriteLine();
+        Console.WriteLine($"{fighter1.Name} WINS");
+        break;
+    }
+    Console.WriteLine();
+
+    fighter2.Attack();
+    fighter1.TakeDamage(fighter2.Damage);
+
+    Console.WriteLine($"{fighter1.Name} HP: {fighter1.Health}");
+    if (!fighter1.isAlive())
+    {
+        Console.WriteLine();
+        Console.WriteLine($"{fighter2.Name} WINS");
+        break;
+    }
+    Console.WriteLine();
+}
 Console.ReadLine();
