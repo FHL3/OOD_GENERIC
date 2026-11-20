@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOD_Generics
+namespace OOD_Generics.Service
 {
     internal class WeaponService
     {

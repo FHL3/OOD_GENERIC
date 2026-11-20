@@ -16,6 +16,7 @@ namespace OOD_Generics.Models
         public int Damage {  get; protected set; }
         public int GuildId { get; set; }
         public int WeapId { get; set; }
+        private static Random number = new Random();
         
         public Character(int id, string name, char rank, decimal coin, int startHealth)
         {
@@ -59,10 +60,37 @@ namespace OOD_Generics.Models
         public virtual void Attack() //Abstraction
         {
             Console.WriteLine($"{Name} attacks");
+            
         }
+        public virtual async Task AttackAsync()
+        {
+            Console.WriteLine($"{Name} prepares to attack");
+            await Task.Delay(2000);
+            Attack();
+        }
+        public bool TryDodge()
+        {
+            int roll = number.Next(1, 101);
+
+            if (roll <= 30)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public virtual void Dodge()
         {
             Console.WriteLine($"{Name} dodges attack");
+        }
+        public virtual async Task DodgeAsync()
+        {
+            Console.WriteLine($"{Name} prepares to dodge attack");
+            await Task.Delay(1000);
+            Dodge();
         }
         public void Celebrate()
         {

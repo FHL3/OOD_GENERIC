@@ -15,8 +15,16 @@ namespace OOD_Generics.Models
 
         public override void Attack()
         {
-            base.Attack();
+            
             Console.WriteLine("Warrior swings sword");
+        }
+        public override async Task AttackAsync()
+        {
+            await base.AttackAsync();
+        }
+        public override async Task DodgeAsync()
+        {
+            await base.DodgeAsync();
         }
         public override void Dodge()
         {

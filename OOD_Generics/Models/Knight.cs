@@ -16,9 +16,18 @@ namespace OOD_Generics.Models
         {
             Console.WriteLine($"{Name} pounced!");
         }
+        public override async Task AttackAsync()
+        {
+            await base.AttackAsync();
+        }
+
         public override void Dodge()
         {
             Console.WriteLine($"{Name} dodges attack");
+        }
+        public override async Task DodgeAsync()
+        {
+            await base.DodgeAsync();
         }
     }
 }

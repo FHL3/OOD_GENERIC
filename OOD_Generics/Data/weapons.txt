@@ -1,3 +1,4 @@
 201,Whisperwind, Carved from the pale, flexible branches of a lightning-struck silverleaf tree and strung with woven spider silk., Recurve Shortbow,
 202,The Peacemaker’s Gavel,A massive, iron-bound warhammer whose head is forged from a single block of dense meteoric ore, engraved with scales of justice.,Heavy Warhammer,
 203,Viper’s Kiss, A slender, needle-thin blade crafted from blackened steel with a hollow groove running down the center.,Stilleto Dagger
+204, Staff of Wisdom, Carved from the last known tree in existance, a tall and long magical staff said to have it's root connected to the Earth's core, Magic Staff
