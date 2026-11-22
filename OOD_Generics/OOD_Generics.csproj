@@ -7,4 +7,22 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Data\character.txt" />
+    <None Remove="Data\guilds.txt" />
+    <None Remove="Data\weapons.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\character.txt">
+      <CopyToOutputDirectory>Copt if newer</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\guilds.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\weapons.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

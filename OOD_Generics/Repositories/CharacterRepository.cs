@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOD_Generics.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace OOD_Generics
+namespace OOD_Generics.Repositories
 {
     public class CharacterRepository : ICharacterRepository
     {
@@ -19,7 +20,10 @@ namespace OOD_Generics
         {
             return characters.ToList();
         }
-
+        public IQueryable<Character> Query()
+        {
+            return characters.AsQueryable();
+        }
         public Character GetById(int id)
         {
             return characters.Where(p => p.ID == id).FirstOrDefault(); //predicate function

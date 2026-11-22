@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOD_Generics
+namespace OOD_Generics.Models
 {
     public class Character
     {
@@ -12,13 +12,19 @@ namespace OOD_Generics
         public string Name { get; set; }    
         public char Rank { get; set; }
         private decimal Coin { get; set;} //encapsulation
-
-        public Character(int id, string name, char rank, decimal coin)
+        public int Health { get; private set; }
+        public int Damage {  get; protected set; }
+        public int GuildId { get; set; }
+        public int WeapId { get; set; }
+        private static Random number = new Random();
+        
+        public Character(int id, string name, char rank, decimal coin, int startHealth)
         {
             ID = id;
             Name = name;
             Rank = rank;
             Coin = coin;
+            this.Health = startHealth;
         }
         public bool SpendCoins(decimal amount)
         {
@@ -54,15 +60,56 @@ namespace OOD_Generics
         public virtual void Attack() //Abstraction
         {
             Console.WriteLine($"{Name} attacks");
+            
+        }
+        public virtual async Task AttackAsync()
+        {
+            Console.WriteLine($"{Name} prepares to attack");
+            await Task.Delay(2000);
+            Attack();
+        }
+        public bool TryDodge()
+        {
+            int roll = number.Next(1, 101);
+
+            if (roll <= 30)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public virtual void Dodge()
+        {
+            Console.WriteLine($"{Name} dodges attack");
+        }
+        public virtual async Task DodgeAsync()
+        {
+            Console.WriteLine($"{Name} prepares to dodge attack");
+            await Task.Delay(1000);
+            Dodge();
         }
         public void Celebrate()
         {
             Console.WriteLine($"{Name} celebrates!");
         }
-
-        public void CharacterInfo()
+        public void TakeDamage(int amount)
         {
-            Console.WriteLine($"Name: {Name}, Rank: {Rank}, Coins: {Coin}.");
+            Health -= amount;
+            Console.WriteLine($"{Name} takes {amount} damage");
+
+            if (Health <= 0)
+            {
+                Health = 0;
+                Console.WriteLine($"{Name} has been defeated");
+            }
+        }
+        public bool isAlive()
+        {
+            return Health > 0;
         }
     }
 }
