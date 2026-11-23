@@ -62,33 +62,46 @@ static async Task<List<string>> LoadCharactersAsync()
 static async Task<string[]> ReadFileAsync(string filepath, SemaphoreSlim semaphore, CancellationToken token)
 {
     await semaphore.WaitAsync(token);
+
     token.ThrowIfCancellationRequested();
+
     try
     {
         Console.WriteLine($"Reading: {Path.GetFileName(filepath)}");
+
         await Task.Delay(5000, token);
+
         string[] content = await File.ReadAllLinesAsync(filepath, token);
+
         Console.WriteLine($"Finished: {Path.GetFileName(filepath)}");
+
         return content;
     }
     finally
     {
         semaphore.Release();
     }
+
 }
 
 Console.WriteLine("===== SYNC FILE LOAD =====");
+
 var characterLines = LoadCharacters();
+
 foreach (var line in characterLines)
 {
     Console.WriteLine(line);
 }
+
 Console.WriteLine("===== Async file load =====");
+
 var asyncCharacterLines = await LoadCharactersAsync();
+
 foreach (var line in asyncCharacterLines)
 {
     Console.WriteLine(line);
 }
+
 Console.WriteLine();
 Console.WriteLine("First Section without SemaphoreSlim");
 Console.WriteLine("Loading multiple files");
