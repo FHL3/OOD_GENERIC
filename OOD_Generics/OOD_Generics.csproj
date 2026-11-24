@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Content Include="Data\character.txt">
-      <CopyToOutputDirectory>Copt if newer</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\guilds.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
